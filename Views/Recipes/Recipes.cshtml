@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Project.Models.BlogTable>
+
+@{
+    ViewBag.Title = "Recipes";
+}
+<div class="Recipes">
+    <link rel="stylesheet" type="text/css" href="/Content/themes/StyleSheet1" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!DOCTYPE HTML>
+    <html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>    
+                <br />
+                <br />
+                <br />
+                <br />
+                <h2>Recipes</h2>
+
+        <body>
+
+            <div class="container">
+                <table class="table">
+                    <tr>
+
+                        <th class="col-md-2">
+                            @Html.DisplayNameFor(model => model.Dish)
+                        </th>
+                        <th class="col-md-1">
+                            @Html.DisplayNameFor(model => model.Cuisine)
+                        </th>
+                        <th class="col-md-2">
+                            @Html.DisplayNameFor(model => model.MainIngredients)
+                        </th>
+                        <th class="col-md-5">
+                            @Html.DisplayNameFor(model => model.Post)
+                        </th>
+                        <th class="col-md-2">
+                            @Html.DisplayNameFor(model => model.Author)
+                        </th>
+                        <th class="col-md-1">
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="col-sm-2">
+                                @Html.DisplayFor(modelItem => item.Dish)
+                            </td>
+                            <td class="col-sm-1">
+                                @Html.DisplayFor(modelItem => item.Cuisine)
+                            </td>
+                            <td class="col-sm-2">
+                                @Html.DisplayFor(modelItem => item.MainIngredients)
+                            </td>
+                            <td class="col-sm-5">
+                                @Html.DisplayFor(modelItem => item.Post)
+                            </td>
+                            <td class="col-sm-2">
+                                @Html.DisplayFor(modelItem => item.Author)
+                            </td>
+                            <td class="col-sm-1">
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </body>
+
+        </div>

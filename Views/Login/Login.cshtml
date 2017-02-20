@@ -1,0 +1,67 @@
+﻿@model Project.Models.UserDetail
+
+@{
+    ViewBag.Title = "Login";
+}
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<div class="signin">
+    <form class="form-horizontal">
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>Login</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        <div class="form-group">
+            <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-5">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-5">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+        </br>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="button" class="btn btn-default" id="btnlogin">Sign in</button>
+                <button type="submit" class="btn btn-default "><a href="/signup/signup">New user? Sign up</button>
+            </div>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnlogin").click(function () {
+                var usr = $("#inputEmail").val();
+                var pwd = $("#inputPassword").val();
+                $.ajax({
+                    url: "/Login/Validate",
+                    data: { User: usr, Password: pwd },
+                    type: "Post",
+                    success: function (result) {
+                        if (result) {
+                            window.location = "/Dashboard/Dashboard";
+                        }
+                        else {
+                            alert("Wrong username and password");
+                        }
+                       
+                    }
+
+                });
+            });
+        });
+    </script>
+</div>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+
+<div class="dashboard">
+    <h2>Dashboard</h2>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <li class="active"><a href="/Recipes/Recipes">Recipes in our Blog</a></li>
+    <br />
+    <li class="active"><a href="/BlogEntry/BlogEntry">Create a new recipe</a></li>
+    <br />
+    <h2>Your Profile</h2>
+    <span class="sessiondetails">
+       
+     
+        Name: @Session["name"] <br /> 
+      Age: @Session["age"]    <br /> 
+        EmailID: @Session["emailid"]  <br /> 
+    </span>
+
+</div>

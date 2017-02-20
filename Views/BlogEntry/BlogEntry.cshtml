@@ -1,0 +1,78 @@
+﻿@model Project.Models.BlogTable
+
+@{
+    ViewBag.Title = "BlogEntry";
+}
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+<div class="blogentry">
+    <br />
+    <br />
+    <br />
+    <h2>Blog Entry</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Dish)
+            </div>
+            <div class="input-text">
+                @Html.EditorFor(model => model.Dish)
+                @Html.ValidationMessageFor(model => model.Dish)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Cuisine)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Cuisine)
+                @Html.ValidationMessageFor(model => model.Cuisine)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.MainIngredients)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MainIngredients)
+                @Html.ValidationMessageFor(model => model.MainIngredients)
+            </div>
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Post)
+            </div>
+            <div class="input-text">
+                @Html.EditorFor(model => model.Post)
+                @Html.ValidationMessageFor(model => model.Post)
+            </div>
+           
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Author)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Author)
+                @Html.ValidationMessageFor(model => model.Author)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Date)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Date)
+                @Html.ValidationMessageFor(model => model.Date)
+            </div>
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+      </fieldset>
+    }
+
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
